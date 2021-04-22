@@ -30,11 +30,20 @@ namespace Scrabble.Tests
         }
 
         [TestMethod]
-        public void WordtoLetter_calculateScoreforaWordDay_7()
+        public void WordtoScore_calculateScoreforaWordDay_7()
         {
             Word newWord = new Word();
-            int testResult = newWord.WordtoLetter("Day");
+            int testResult = newWord.WordtoScore("Day");
             int expected = 7;
+            Assert.AreEqual(expected, testResult);
+        }
+
+        [TestMethod]
+        public void WordtoScore_Returns50WhenWordLengthIs7_50()
+        {
+            Word newWord = new Word();
+            int testResult = newWord.WordtoScore("racecar");
+            int expected = 50;
             Assert.AreEqual(expected, testResult);
         }
 
