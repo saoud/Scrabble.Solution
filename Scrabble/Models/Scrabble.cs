@@ -45,6 +45,10 @@ namespace Scrabble.Models
         public int WordtoScore(string inputWord) {
             int sum = 0;
             Console.WriteLine("-----------------------");
+            if (Logic.BigWordBonus(inputWord))
+            {
+                return 50;
+            }
             foreach(char letter in inputWord) {
             sum += LetterScore(letter);
         }
